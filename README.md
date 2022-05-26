@@ -3,6 +3,8 @@
 A WIP remake of ![The Village Sacrifice](https://github.com/hayden-donnelly/The-Village-Sacrifice) in VR Chat.
 Available on PC and Quest.
 
+Gameplay: https://www.youtube.com/watch?v=GmtNPp3sV3w
+
 ## Authors
 
 * **Hayden Donnelly** - *Programmer*
