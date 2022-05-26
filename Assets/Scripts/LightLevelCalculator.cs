@@ -10,7 +10,7 @@ public class LightLevelCalculator : UdonSharpBehaviour
     [SerializeField] private RenderTexture lightTexture;
     [SerializeField] private Texture2D tex;
 
-    void OnPostRender()
+    private void OnPostRender()
     {
         //CalculateLightLevel();
     }

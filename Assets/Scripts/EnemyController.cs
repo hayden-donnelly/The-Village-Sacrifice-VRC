@@ -23,7 +23,7 @@ public class EnemyController : UdonSharpBehaviour
     public GameObject YellowAlert;
     public GameObject RedAlert;
 
-    void Start()
+    private void Start()
     {
         Agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         LP = Networking.LocalPlayer;

@@ -8,6 +8,10 @@ public class WorldGeneration : UdonSharpBehaviour
 {
     [SerializeField] private double worldSeed;
     [SerializeField] private float interpolationWeight;
+    [SerializeField] private GameObject redTile;
+    [SerializeField] private GameObject greenTile;
+    [SerializeField] private GameObject blueTile;
+    [SerializeField] private Transform startingPoint;
 
     private double GenerateNumber(double x, double seed)
     {   
@@ -33,7 +37,7 @@ public class WorldGeneration : UdonSharpBehaviour
         return value1 + weight * (value2 - value1);
     }
 
-    private float PerlinNoise(Vector2 point, int cell_size, int grid_width, int grid_height)
+    private float PerlinNoise(Vector2 point, float cell_size, int grid_width, int grid_height)
     {
         // Grid points
         Vector2 bottomLeftGridPoint = new Vector2((float)Math.Floor(point.x / cell_size) * cell_size, 
@@ -66,5 +70,27 @@ public class WorldGeneration : UdonSharpBehaviour
         float finalInterpolation = Interpolate(firstInterpolation, secondInterpolation, interpolationWeight);
 
         return finalInterpolation;
-    }   
+    }
+
+    private void Start()
+    {
+        for(int x = 0; x < 16; x++)
+        {
+            for(int y = 0; y < 16; y++)
+            {
+                GameObject tile;
+                float noise = PerlinNoise(new Vector2(x, y), 1.2f, 20, 20);
+                //Debug.Log(noise);
+                if(noise > 1f)
+                {
+                    tile = blueTile;
+                }
+                else
+                {
+                    tile = greenTile;
+                }
+                Instantiate(tile, startingPoint.position + new Vector3(x, y, 0), startingPoint.rotation);
+            }
+        }
+    }
 }
