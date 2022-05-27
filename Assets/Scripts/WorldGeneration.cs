@@ -11,7 +11,11 @@ public class WorldGeneration : UdonSharpBehaviour
     [SerializeField] private GameObject redTile;
     [SerializeField] private GameObject greenTile;
     [SerializeField] private GameObject blueTile;
-    [SerializeField] private Transform startingPoint;
+    [SerializeField] private Transform startingPoint1;
+    [SerializeField] private Transform startingPoint2;
+    [SerializeField] private GameObject tile1;
+    [SerializeField] private GameObject tile2;
+    [SerializeField] private GameObject tile3;
 
     private double GenerateNumber(double x, double seed)
     {   
@@ -74,13 +78,18 @@ public class WorldGeneration : UdonSharpBehaviour
 
     private void Start()
     {
+        ColorGridDemo();
+        GenerateMaze();
+    }
+
+    private void ColorGridDemo()
+    {
         for(int x = 0; x < 50; x++)
         {
             for(int y = 0; y < 50; y++)
             {
                 GameObject tile;
                 float noise = PerlinNoise(new Vector2(x, y), 1.2f, 100, 100);
-                //Debug.Log(noise);
                 if(noise < -2)
                 {
                     tile = redTile;
@@ -94,7 +103,32 @@ public class WorldGeneration : UdonSharpBehaviour
                     Debug.Log("fuck");
                     tile = greenTile;
                 }
-                Instantiate(tile, startingPoint.position + new Vector3(x, y, 0), startingPoint.rotation);
+                Instantiate(tile, startingPoint1.position + new Vector3(x, y, 0), startingPoint1.rotation);
+            }
+        }
+    }
+
+    private void GenerateMaze()
+    {
+        for(int x = 0; x < 50; x++)
+        {
+            for(int y = 0; y < 50; y++)
+            {
+                GameObject tile;
+                float noise = PerlinNoise(new Vector2(x, y), 1.2f, 100, 100);
+                if(noise < -2)
+                {
+                    tile = tile1;
+                }
+                else if(noise > 2)
+                {
+                    tile = tile2;
+                }
+                else
+                {
+                    tile = tile3;
+                }
+                Instantiate(tile, startingPoint2.position + new Vector3(-x*16, 0, y*16), startingPoint2.rotation);
             }
         }
     }
