@@ -4,6 +4,8 @@ using VRC.SDKBase;
 using VRC.Udon;
 using System.Collections;
 
+// Currently broken.
+
 public class LightLevelCalculator : UdonSharpBehaviour
 {
     public float lightLevel;
