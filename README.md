@@ -11,7 +11,7 @@ Gameplay: https://www.youtube.com/watch?v=GmtNPp3sV3w
 * **Peter Prickarz** - *Artist*
 * **Eric Goetz** - *Composer*
 
-## Screenshot
+## Screenshots
 
 ![VRChat_1920x1080_2022-05-07_21-23-32 353](https://user-images.githubusercontent.com/30982485/167277980-f09f396d-0a5a-4b2f-8465-ea8740702057.png)
 ![VRChat_1920x1080_2022-05-27_12-20-59 020](https://user-images.githubusercontent.com/30982485/170739478-4d1e148b-b37a-416e-a8f3-032d4f9eaad0.png)
