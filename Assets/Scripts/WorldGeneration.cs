@@ -74,19 +74,24 @@ public class WorldGeneration : UdonSharpBehaviour
 
     private void Start()
     {
-        for(int x = 0; x < 16; x++)
+        for(int x = 0; x < 50; x++)
         {
-            for(int y = 0; y < 16; y++)
+            for(int y = 0; y < 50; y++)
             {
                 GameObject tile;
-                float noise = PerlinNoise(new Vector2(x, y), 1.2f, 20, 20);
+                float noise = PerlinNoise(new Vector2(x, y), 1.2f, 100, 100);
                 //Debug.Log(noise);
-                if(noise > 1f)
+                if(noise < -2)
+                {
+                    tile = redTile;
+                }
+                else if(noise > 2)
                 {
                     tile = blueTile;
                 }
                 else
                 {
+                    Debug.Log("fuck");
                     tile = greenTile;
                 }
                 Instantiate(tile, startingPoint.position + new Vector3(x, y, 0), startingPoint.rotation);
