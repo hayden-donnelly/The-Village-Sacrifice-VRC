@@ -120,7 +120,7 @@ public class WorldGeneration : UdonSharpBehaviour
                 {
                     tile = tile1;
                 }
-                else if(noise > 2)
+                else if(noise > 5)
                 {
                     tile = tile2;
                 }
@@ -129,6 +129,39 @@ public class WorldGeneration : UdonSharpBehaviour
                     tile = tile3;
                 }
                 Instantiate(tile, startingPoint2.position + new Vector3(-x*16, 0, y*16), startingPoint2.rotation);
+            }
+        }
+    }
+
+    private void Gen()
+    {
+        // Map player position onto noise grid.
+        // Calculate noise in a square around the player.
+        // Instantiate maze tiles based on calculated noise.
+        
+        int squareLength = 50;
+        Vector3 playerPosition = Networking.LocalPlayer.GetPosition();
+        Vector3 startingPosition = new Vector3(playerPosition.x - squareLength/2, 0, playerPosition.z - squareLength/2);
+
+        for(int i = 0; i < squareLength; i++)
+        {
+            for(int j = 0; j < squareLength; j++)
+            {
+                GameObject tile;
+                float noise = PerlinNoise(new Vector2(playerPosition.x/100, playerPosition.z/100), 5f, 100, 100);
+                if(noise < -2)
+                {
+                    tile = tile1;
+                }
+                else if(noise > 5)
+                {
+                    tile = tile2;
+                }
+                else
+                {
+                    tile = tile3;
+                }
+                Instantiate(tile, startingPosition + new Vector3(i*16, 0, j*16), startingPoint2.rotation);
             }
         }
     }
