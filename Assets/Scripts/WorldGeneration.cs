@@ -17,7 +17,14 @@ public class WorldGeneration : UdonSharpBehaviour
     [SerializeField] private GameObject tile1;
     [SerializeField] private GameObject tile2;
     [SerializeField] private GameObject tile3;
-    [SerializeField] private NavMeshSurface[][] surfaces;
+    //[SerializeField] private NavMeshSurface[][] surfaces = new NavMeshSurface[50][];
+    public NavMeshSurface asd;
+
+    private void Start()
+    {
+        ColorGridDemo();
+        GenerateMaze();
+    }
 
     private double GenerateNumber(double x, double seed)
     {   
@@ -78,12 +85,6 @@ public class WorldGeneration : UdonSharpBehaviour
         return finalInterpolation;
     }
 
-    private void Start()
-    {
-        ColorGridDemo();
-        GenerateMaze();
-    }
-
     private void ColorGridDemo()
     {
         for(int x = 0; x < 50; x++)
@@ -130,8 +131,8 @@ public class WorldGeneration : UdonSharpBehaviour
                 {
                     tile = tile3;
                 }
-                GameObject newTile = Instantiate(tile, startingPoint2.position + new Vector3(-x*16, 0, y*16), startingPoint2.rotation);
-
+                //surfaces[x,y] = (NavMeshSurface)Instantiate(tile, startingPoint2.position + new Vector3(-x*16, 0, y*16), startingPoint2.rotation);
+                //surfaces[x,y].BuildNavMesh();
             }
         }
     }
@@ -167,10 +168,5 @@ public class WorldGeneration : UdonSharpBehaviour
                 Instantiate(tile, startingPosition + new Vector3(i*16, 0, j*16), startingPoint2.rotation);
             }
         }
-    }
-
-    private void BakeNaveMesh()
-    {
-
     }
 }
