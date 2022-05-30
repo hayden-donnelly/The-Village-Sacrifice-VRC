@@ -3,6 +3,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 using System;
+using UnityEngine.AI;
 
 public class WorldGeneration : UdonSharpBehaviour
 {
@@ -16,6 +17,7 @@ public class WorldGeneration : UdonSharpBehaviour
     [SerializeField] private GameObject tile1;
     [SerializeField] private GameObject tile2;
     [SerializeField] private GameObject tile3;
+    [SerializeField] private NavMeshSurface[][] surfaces;
 
     private double GenerateNumber(double x, double seed)
     {   
@@ -128,7 +130,8 @@ public class WorldGeneration : UdonSharpBehaviour
                 {
                     tile = tile3;
                 }
-                Instantiate(tile, startingPoint2.position + new Vector3(-x*16, 0, y*16), startingPoint2.rotation);
+                GameObject newTile = Instantiate(tile, startingPoint2.position + new Vector3(-x*16, 0, y*16), startingPoint2.rotation);
+
             }
         }
     }
@@ -164,5 +167,10 @@ public class WorldGeneration : UdonSharpBehaviour
                 Instantiate(tile, startingPosition + new Vector3(i*16, 0, j*16), startingPoint2.rotation);
             }
         }
+    }
+
+    private void BakeNaveMesh()
+    {
+
     }
 }

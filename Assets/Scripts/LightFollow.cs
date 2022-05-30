@@ -14,6 +14,9 @@ public class LightFollow : UdonSharpBehaviour
 
     private void Update()
     {
-        transform.position = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position;
+        if(localPlayer != null)
+        {
+            transform.position = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head).position;
+        }
     }
 }
