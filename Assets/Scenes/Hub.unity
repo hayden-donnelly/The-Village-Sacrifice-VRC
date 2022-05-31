@@ -11127,6 +11127,7 @@ MonoBehaviour:
   tile1: {fileID: 2044394395}
   tile2: {fileID: 2625915193179499525}
   tile3: {fileID: 459877072937166934}
+  asd: {fileID: 0}
 --- !u!4 &942624422
 Transform:
   m_ObjectHideFlags: 0

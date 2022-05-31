@@ -18,6 +18,10 @@ public class WorldGeneration : UdonSharpBehaviour
     [SerializeField] private GameObject tile2;
     [SerializeField] private GameObject tile3;
     //[SerializeField] private NavMeshSurface[][] surfaces = new NavMeshSurface[50][];
+    
+    // Udon is having trouble finding this type def for some reason,
+    // so I probably won't be able to dynamically bake nav meshes.
+    // As a workaround, I'm going to try implementing A* with raycasts.
     //public NavMeshSurface asd;
 
     private void Start()
