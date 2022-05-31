@@ -18,7 +18,7 @@ public class WorldGeneration : UdonSharpBehaviour
     [SerializeField] private GameObject tile2;
     [SerializeField] private GameObject tile3;
     //[SerializeField] private NavMeshSurface[][] surfaces = new NavMeshSurface[50][];
-    public NavMeshSurface asd;
+    //public NavMeshSurface asd;
 
     private void Start()
     {
