@@ -9,7 +9,6 @@ Gameplay: https://www.youtube.com/watch?v=GmtNPp3sV3w
 
 * **Hayden Donnelly** - *Programmer*
 * **Peter Prickarz** - *Artist*
-* **Eric Goetz** - *Composer*
 
 ## Screenshots
 
