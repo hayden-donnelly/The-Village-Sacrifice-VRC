@@ -3,6 +3,8 @@
 A WIP remake of ![The Village Sacrifice](https://github.com/hayden-donnelly/The-Village-Sacrifice) in VR Chat.
 Available on PC and Quest.
 
+I'm putting this project on hold until UdonSharp supports generic lists.
+
 Gameplay: https://www.youtube.com/watch?v=GmtNPp3sV3w
 
 ## Authors
