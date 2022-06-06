@@ -7,6 +7,8 @@ I'm putting this project on hold until UdonSharp supports generic lists.
 
 Gameplay: https://www.youtube.com/watch?v=GmtNPp3sV3w
 
+![Gameplay 1](https://www.youtube.com/watch?v=I9bzMmLEvuk)
+
 ## Authors
 
 * **Hayden Donnelly** - *Programmer*
