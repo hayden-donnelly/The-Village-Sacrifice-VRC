@@ -5,14 +5,15 @@ Available on PC and Quest.
 
 I'm putting this project on hold until UdonSharp supports generic lists.
 
-Gameplay: https://www.youtube.com/watch?v=GmtNPp3sV3w
-
-![Gameplay 1](https://www.youtube.com/watch?v=I9bzMmLEvuk)
-
 ## Authors
 
 * **Hayden Donnelly** - *Programmer*
 * **Peter Prickarz** - *Artist*
+
+## Gameplay
+
+1) https://www.youtube.com/watch?v=GmtNPp3sV3w
+2) https://www.youtube.com/watch?v=I9bzMmLEvuk
 
 ## Screenshots
 
