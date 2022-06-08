@@ -3,8 +3,6 @@
 A WIP remake of ![The Village Sacrifice](https://github.com/hayden-donnelly/The-Village-Sacrifice) in VR Chat.
 Available on PC and Quest.
 
-Includes procedural world generation.
-
 I'm putting this project on hold until UdonSharp supports generic lists.
 
 ## Authors
